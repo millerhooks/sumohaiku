@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title%}Form Stats{% endblock %}
+
+{% block extra_head %}
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Asset');
+        data.addColumn('number', 'Average Time Spent (Seconds)');
+        data.addRows([
+          ['UserProfileFormA', {{ form_a.cost__avg }}],
+          ['UserProfileFormB', {{ form_b.cost__avg }}],
+        ]);
+
+        var options = {
+          width: 800, height: 540,
+          title: 'Company Performance',
+          yAxis: {title: 'Time Cost',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+    <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Stats for forms!</h1>
+        <div id="chart_div"></div>
+      </div>
+{% endblock %}

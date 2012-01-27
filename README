@@ -1,0 +1,7 @@
+How to use this:
+
+$git clone git@github.com:millerhooks/sumohaiku.git
+$cd sumohaiku
+$pip install -r requirements.txt
+$fab initial_setup
+$python manage.py runserver

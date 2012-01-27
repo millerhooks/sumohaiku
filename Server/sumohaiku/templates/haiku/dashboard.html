@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title%}Home{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+    <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>Nature and Words!</h1>
+        <p>Haiku (俳句 haikai verse?), is a very short form of Japanese poetry typically characterised by three qualities:</p>
+        <ul>
+            <li>The essence of haiku is "cutting" (kiru).[1] This is often represented by the juxtaposition of two images or ideas[2] and a kireji ("cutting word") between them, a kind of verbal punctuation mark which signals the moment of separation and colours the manner in which the juxtaposed elements are related.</li>
+            <li>Traditional haiku consist of 17 on (also known as morae), in three phrases of 5, 7 and 5 on respectively.[4] Any one of the three phrases may end with the kireji.[5] Although haiku are often stated to have 17 syllables,[6] this is incorrect as syllables and on are not the same.</li>
+            <li>A kigo (seasonal reference), usually drawn from a saijiki, an extensive but defined list of such words. The majority of kigo, but not all, are drawn from the natural world. This, combined with the origins of haiku in pre-industrial Japan, has led to the inaccurate impression that haiku are necessarily nature poems.</li>
+
+        </ul>
+        <p><a href="{% url test_register %}" class="btn primary large">Register &raquo;</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+      {% for poem in haiku_list %}
+        <div class="span-one-third">
+          <h2>{{ poem.name }}</h2>
+          <p>{{ poem.text|safe }}</p>
+        </div>
+      {% endfor %}
+
+
+      </div>
+{% endblock %}
+

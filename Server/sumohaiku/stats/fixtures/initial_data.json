@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "stats.asset", "fields": {"type": "0", "name": "UserProfileFormA"}}, {"pk": 2, "model": "stats.asset", "fields": {"type": "0", "name": "UserProfileFormB"}}]
