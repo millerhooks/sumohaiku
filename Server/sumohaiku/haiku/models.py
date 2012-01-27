@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.localflavor.us.models import USStateField, PhoneNumberField
 
+__all__ = ('UserProfile', 'Haiku')
 
 USER_TYPE_CHOICES = (
     ('0' , 'Blacksmith'),

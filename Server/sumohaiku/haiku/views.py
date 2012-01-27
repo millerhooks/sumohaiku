@@ -21,6 +21,7 @@ class DashboardView(ListView):
     template_name = "haiku/dashboard.html"
     queryset = Haiku.objects.all()
 
+
 class RegistrationFormTestWizard(SessionWizardView):
     template_name = 'stats/registration_wizard.html'
 

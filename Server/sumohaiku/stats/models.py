@@ -7,12 +7,14 @@ STAT_TYPE_CHOICES = (
     ('2' , 'Interactive'),
 )
 
+
 class Asset(models.Model):
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=1, choices=STAT_TYPE_CHOICES)
 
     def __unicode__(self):
         return self.name
+
 
 class Stat(models.Model):
     asset = models.ForeignKey(Asset)
