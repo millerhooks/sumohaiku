@@ -8,6 +8,11 @@ __all__ = ('UserForm', 'UserProfileForm',
 
 
 class UserForm(forms.ModelForm):
+    """
+    User form with an aditional stamp for tracking and a password
+    for comparison.
+
+    """
     start_stamp = forms.CharField(
         widget=forms.HiddenInput(attrs={'value': datetime.datetime.now()}))
 
@@ -24,6 +29,10 @@ class UserForm(forms.ModelForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Base class for the user profile form.
+
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)

@@ -9,6 +9,10 @@ STAT_TYPE_CHOICES = (
 
 
 class Asset(models.Model):
+    """
+    Asset to be tracked.
+
+    """
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=1, choices=STAT_TYPE_CHOICES)
 
@@ -17,6 +21,10 @@ class Asset(models.Model):
 
 
 class Stat(models.Model):
+    """
+    Statistical entry for a particular asset.
+
+    """
     asset = models.ForeignKey(Asset)
     user = models.ForeignKey(User, blank=True, null=True)
     cost = models.IntegerField(blank=True, null=True)
