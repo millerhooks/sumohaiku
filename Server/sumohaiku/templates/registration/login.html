@@ -1,0 +1,19 @@
+{% extends "registration/base.html" %}
+{% load i18n %}
+
+{% block form %}
+{% if user.is_authenticated %}
+<p>You are already logged in.</p>
+{% else %}
+    <form method="post" action=".">
+  {{ form.as_p }}
+
+  <input type="submit" value="{% trans 'Log in' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
+  {% csrf_token %}
+</form>
+
+<p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url registration_register %}">{% trans "Register" %}</a>!</p>
+{% endif %}
+{% endblock %}

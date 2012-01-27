@@ -1,0 +1,10 @@
+*.pyc
+.AppleDouble
+.idea
+test.DB
+uploads
+cache
+.DS_Store
+local_settings.py
+cache
+Server/run/
